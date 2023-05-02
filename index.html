@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./src/imgs/anime-icon-21.jpg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Like A Anime</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <h1 class="title-header">Like a Anime</h1>
+        <img
+          class="img-header"
+          src="./src/imgs/anime-icon-21.jpg"
+          alt="Icone da página"
+        />
+      </div>
+      <div class="categories-wrapper">
+        <label for="categories">Categorias</label>
+        <select name="categories" id="categories"></select>
+      </div>
+      <a href="login.html" class="btn_entry">
+        Entrar <span class="material-symbols-rounded"> person </span>
+      </a>
+    </header>
+    <section class="content">
+      <div class="per-category">
+        <div class="head-cards">
+          <div class="trave"></div>
+          <h1 class="category-title">ACTION</h1>
+        </div>
+
+        <div class="cards-wrapper"></div>
+        <div class="pagination">
+          <button
+            class="text-pagination btn-minus"
+            onclick="change_page('minus')"
+          >
+            <-
+          </button>
+          <h2 class="text-pagination">Página</h2>
+          <h2 class="text-pagination txt-initial">1</h2>
+          <h2 class="text-pagination">de</h2>
+          <h2 class="text-pagination txt-final">191</h2>
+          <button
+            class="text-pagination btn-plus"
+            onclick="change_page('plus')"
+          >
+            ->
+          </button>
+        </div>
+      </div>
+
+      <aside class="top-animes">
+        <div class="top-animes-head">
+          <div class="trave"></div>
+          <h1 class="top-title">TOP VIEWS</h1>
+        </div>
+        <div class="top-animes-cards"></div>
+      </aside>
+    </section>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+:root {
+  /* Criando a paleta de cores  */
+  --b1: #151c48;
+  --b2: #174580;
+  --b3: #3b70a2;
+  --b4: #00a1d7;
+  --b5: #70c2e8;
+  --b6: #5bb9d3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  background-color: var(--b2);
+}
+.header {
+  background-color: var(--b1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+.title-header {
+  color: #fff;
+  font-family: "Sigmar", cursive;
+}
+.img-header {
+  width: 6rem;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.btn_entry {
+  display: flex;
+  gap: 10px;
+  text-decoration: none;
+  background-color: var(--b5);
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: 0.3rem;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+#categories {
+  appearance: menulist-button;
+}
+label {
+  font-family: "Sigmar", cursive;
+  color: #fff;
+}
+.title-card {
+  color: var(--b1);
+}
+.content {
+  width: 100%;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+  padding: 10rem;
+}
+.top-animes {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.top-animes-head {
+  display: flex;
+  gap: 2rem;
+}
+.top-animes-cards {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  padding: 0.5rem;
+}
+.per-category {
+  width: 70%;
+}
+.head-cards {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  flex-direction: row;
+  border-bottom: var(--b6) solid 2px;
+  align-items: center;
+}
+.trave {
+  background-color: red;
+  width: 5px;
+  height: 2rem;
+}
+.category-title {
+  font-family: "Sigmar", cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+.top-title {
+  font-family: "Sigmar", cursive;
+  font-size: 1rem;
+  color: #fff;
+}
+section {
+  display: flex;
+  align-items: flex-start;
+}
+.cards-wrapper {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+.img-card {
+  width: 100%;
+  height: 90%;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 22.5%;
+  margin-top: 1rem;
+  background-color: #fff;
+}
+.card-top {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin-top: 1rem;
+  background-color: var(--b5);
+}
+.pagination {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.text-pagination {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #fff;
+}
+.btn-minus,
+.btn-plus {
+  background-color: transparent;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-family: "Sigmar";
+}
