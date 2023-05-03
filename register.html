@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./src/imgs/anime-icon-21.jpg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/register_style.css" />
+    <title>Like A Anime</title>
+  </head>
+  <body>
+    <div class="logo">
+      <h1 class="title-header">Like a</h1>
+      <img
+        class="img-header"
+        src="./src/imgs/anime-icon-21.jpg"
+        alt="Icone da página"
+      />
+    </div>
+    <form action="testes.html" method="get">
+      <div class="form-group">
+        <label for="username">Nome de Usuário:</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirmar Senha:</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          required
+        />
+        <span id="password-match-error" style="display: none; color: red"
+          >As senhas não correspondem</span
+        >
+      </div>
+      <button class="btn-register" type="submit">Registrar</button>
+    </form>
+    <script>
+      const confirm_password = document.getElementById("confirm-password");
+      const password_match_error = document.getElementById(
+        "password-match-error"
+      );
+
+      confirm_password.oninput = function () {
+        if (
+          confirm_password.value !== document.getElementById("password").value
+        ) {
+          password_match_error.style.display = "block";
+        } else {
+          password_match_error.style.display = "none";
+        }
+      };
+    </script>
+  </body>
+</html>

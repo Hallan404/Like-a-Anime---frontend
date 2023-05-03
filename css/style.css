@@ -131,12 +131,18 @@ section {
   margin-top: 1rem;
   background-color: #fff;
 }
+.card:hover {
+  transform: scale(1.2);
+}
 .card-top {
   display: flex;
   flex-direction: column;
   width: 45%;
   margin-top: 1rem;
   background-color: var(--b5);
+}
+.card-top:hover {
+  transform: scale(1.2);
 }
 .pagination {
   display: flex;
@@ -155,4 +161,48 @@ section {
   width: 2rem;
   height: 2rem;
   font-family: "Sigmar";
+}
+
+/* Estilo para o modal de fundo */
+.modal {
+  margin-top: 5rem;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo para o conteúdo do modal */
+.modal-content {
+  background-color: var(--b5);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+  position: absolute;
+  left: 65%;
+  width: 3rem;
+  height: 3rem;
+  color: #ec0101;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

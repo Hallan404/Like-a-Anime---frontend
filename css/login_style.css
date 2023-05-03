@@ -1,13 +1,24 @@
+:root {
+  /* Criando a paleta de cores  */
+  --b1: #151c48;
+  --b2: #174580;
+  --b3: #3b70a2;
+  --b4: #00a1d7;
+  --b5: #70c2e8;
+  --b6: #5bb9d3;
+}
+
 body {
+  background-color: var(--b6);
   width: 100vw;
   height: 100vh;
   display: flex;
-
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 form {
-  background-color: #ccc;
+  background-color: var(--b5);
   border-radius: 5rem;
   width: 35%;
   height: 75%;
@@ -16,6 +27,7 @@ form {
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .form-group {
   margin-bottom: 1rem;
@@ -58,6 +70,14 @@ input[type="password"] {
   margin-bottom: 10px;
   font-size: 16px;
 }
+.txt-register {
+  color: #333;
+  font-size: 16px;
+  text-decoration: none;
+}
+.txt-register a {
+  cursor: pointer;
+}
 
 .btn-facebook,
 .btn-google {
@@ -90,4 +110,22 @@ input[type="password"] {
 }
 .social {
   width: 100%;
+}
+.logo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 70vh;
+  left: 55vw;
+}
+.img-header {
+  width: 12rem;
+}
+.title-header {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: var(--b1);
+  position: absolute;
+  right: 10rem;
+  bottom: 6rem;
 }

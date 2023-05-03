@@ -55,6 +55,7 @@ const perGenre = (genreId, page) => {
         image: item.images.webp.image_url,
         title: item.title_english ? item.title_english : item.title,
         popularity: item.popularity,
+        description: item.synopsis,
       }));
       // Criando os cards de todos os animes
       for (let i = 0; i < information_anime.length; i++) {
@@ -64,11 +65,40 @@ const perGenre = (genreId, page) => {
         const label_anime = document.createElement("label");
         label_anime.textContent = `${information_anime[i].title}`;
         label_anime.className = "title-card";
+        const anime_description = document.createElement("p");
+        anime_description.textContent = `${information_anime[i].description}`;
         const card = document.createElement("div");
         card.className = "card";
         card.appendChild(img_anime);
         card.appendChild(label_anime);
         div_per_category.appendChild(card);
+        // adiciona evento de clique para mostrar modal
+        card.addEventListener("click", () => {
+          // Abrindo o modal
+          const modal = document.getElementById("modal");
+          modal.style.display = "block";
+
+          // Exibibindo as informações do anime correspondente
+
+          const modalContent = modal.querySelector(".modal-content");
+          modalContent.innerHTML = `
+          <h1 class="close-modal">x</h1>
+         <h2>${label_anime.textContent}</h2>
+      <img src="${img_anime.getAttribute("src")}">
+      <p>${anime_description.textContent}</p>
+      <!-- Adicione outras informações do anime aqui -->
+    `;
+          // Adicionando um evento de clique para fechar o modal quando o usuário clicar no botão de fechar
+          const closeModalButton = document.querySelector(".close-modal");
+          // Verificando se o botão de fechar foi encontrado
+          if (closeModalButton) {
+            // Adicionando um evento de clique para fechar o modal quando o usuário clicar no botão de fechar
+            closeModalButton.addEventListener("click", () => {
+              const modal = document.getElementById("modal");
+              modal.style.display = "none";
+            });
+          }
+        });
       }
 
       // Criando os cards para os mais populares
