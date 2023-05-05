@@ -68,7 +68,6 @@ input[type="password"] {
 
 .social-login p {
   margin-bottom: 10px;
-  font-size: 16px;
 }
 .txt-register {
   color: #333;
@@ -128,4 +127,80 @@ input[type="password"] {
   position: absolute;
   right: 10rem;
   bottom: 6rem;
+}
+@media screen and (max-width: 576px) {
+  /* Estilos para dispositivos com largura menor ou igual a 576px */
+  body {
+    font-size: 12px;
+  }
+  .social {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 80vh;
+    left: 55vw;
+  }
+  .img-header {
+    width: 7rem;
+  }
+  form {
+    width: 85%;
+    height: 85%;
+    padding: 1rem;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .btn-login {
+    width: 80%;
+  }
+  .txt-register {
+    font-size: 1.2rem;
+  }
+  .social-login p {
+    font-size: 1.2rem;
+    margin-top: 5rem;
+  }
+  .btn-facebook,
+  .btn-google {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1025px) {
+  .logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 80vh;
+    left: 55vw;
+  }
+  .img-header {
+    width: 8rem;
+  }
+  form {
+    width: 60%;
+  }
+  .txt-register {
+    font-size: 1.2rem;
+  }
+  .social-login p {
+    font-size: 1.2rem;
+  }
+  .btn-facebook,
+  .btn-google {
+    font-size: 1.2rem;
+  }
 }

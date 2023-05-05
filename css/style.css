@@ -14,6 +14,7 @@
 }
 body {
   background-color: var(--b2);
+  font-size: 16px;
 }
 .header {
   background-color: var(--b1);
@@ -45,6 +46,9 @@ body {
   justify-content: center;
   align-items: center;
   color: #fff;
+}
+.btn_entry h1 {
+  font-size: 1rem;
 }
 
 #categories {
@@ -95,7 +99,7 @@ label {
 }
 .trave {
   background-color: red;
-  width: 5px;
+  width: 1rem;
   height: 2rem;
 }
 .category-title {
@@ -109,10 +113,7 @@ label {
   font-size: 1rem;
   color: #fff;
 }
-section {
-  display: flex;
-  align-items: flex-start;
-}
+
 .cards-wrapper {
   display: flex;
   width: 100%;
@@ -188,6 +189,22 @@ section {
   border-radius: 5px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
 }
+.add-favorite {
+  width: auto;
+  padding: 0.5rem 1rem;
+  background-color: var(--b2);
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  border-radius: 0.3rem;
+  border: none;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.add-favorite:hover {
+  background-color: var(--b5);
+  color: var(--b1);
+}
 
 .close-modal {
   position: absolute;
@@ -205,4 +222,109 @@ section {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal-text {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+/* Mobile */
+@media screen and (max-width: 576px) {
+  /* Estilos para dispositivos com largura menor ou igual a 576px */
+  body {
+    font-size: 12px;
+  }
+  .close-modal {
+    left: 85%;
+  }
+  .per-category {
+    width: 100%;
+  }
+  .card {
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+    margin-top: 1rem;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .title-header {
+    display: none;
+  }
+  .btn_entry {
+    width: 2rem;
+  }
+  .btn_entry h1 {
+    display: none;
+  }
+  .top-animes {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .close-modal {
+    left: 85%;
+  }
+  .content {
+    width: 100%;
+    margin-top: 1rem;
+    flex-direction: column;
+
+    padding: 1rem;
+  }
+
+  .per-category {
+    width: 95%;
+  }
+  .title-header {
+    display: none;
+  }
+  .btn_entry {
+    width: 2rem;
+  }
+  .btn_entry h1 {
+    display: none;
+  }
+  .top-animes {
+    display: none;
+  }
+
+  .card {
+    width: 47%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1025px) {
+  .top-animes-cards {
+    width: 100%;
+  }
+  .top-animes {
+    width: 20%;
+  }
+  .per-category {
+    width: 80%;
+  }
+  .title-header {
+    display: none;
+  }
+  .card-top {
+    width: 100%;
+  }
+  .card {
+    width: 30%;
+  }
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 1rem;
+  }
 }

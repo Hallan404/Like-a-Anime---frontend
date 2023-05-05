@@ -1,0 +1,68 @@
+:root {
+  /* Criando a paleta de cores  */
+  --b1: #151c48;
+  --b2: #174580;
+  --b3: #3b70a2;
+  --b4: #00a1d7;
+  --b5: #70c2e8;
+  --b6: #5bb9d3;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Centralizando todo o conteúdo da página */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100vw;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: var(--b1);
+  color: var(--b5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Definindo a fonte sem serifa para os títulos */
+  font-family: sans-serif;
+}
+
+button {
+  background-color: var(--b4);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--b3);
+}
+.user-data-field {
+  margin: 1rem;
+}
+.anime-list.expanded {
+  max-height: 1000px;
+}
+.anime-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+@media screen and (max-width: 576px) {
+  body {
+    color: white !important;
+  }
+}

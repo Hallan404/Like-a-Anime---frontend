@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Perfil do Usuário</title>
+    <!-- Importação dos icones usados -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/user_style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="title-profile">Perfil do Usuário</h1>
+      <div class="user-data">
+        <div class="user-data-field">
+          <span class="icon"><i class="fas fa-user"></i></span>
+          <span class="field-label">Nome de Usuário:</span>
+          <span class="field-value editable">Usuário</span>
+          <span class="edit-icon" title="Editar"
+            ><i class="fas fa-pencil-alt"></i
+          ></span>
+        </div>
+        <div class="user-data-field">
+          <span class="icon"><i class="fas fa-envelope"></i></span>
+          <span class="field-label">E-mail:</span>
+          <span class="field-value editable">usuario@exemplo.com</span>
+          <span class="edit-icon" title="Editar"
+            ><i class="fas fa-pencil-alt"></i
+          ></span>
+        </div>
+        <div class="user-data-field">
+          <span class="icon"><i class="fas fa-star"></i></span>
+          <span class="field-label">Animes Favoritos:</span>
+          <span class="field-value expandable">
+            <ul class="anime-list">
+              <li>Fullmetal Alchemist</li>
+              <li>Death Note</li>
+            </ul>
+          </span>
+          <span class="expand-icon" title="Expandir"
+            ><i class="fas fa-chevron-down"></i
+          ></span>
+        </div>
+        <div class="user-data-field">
+          <span class="icon"><i class="fas fa-lock"></i></span>
+          <span class="field-label">Senha:</span>
+          <span class="field-value editable">********</span>
+          <span class="edit-icon" title="Editar"
+            ><i class="fas fa-pencil-alt"></i
+          ></span>
+        </div>
+      </div>
+      <button class="save-button" style="display: none">Salvar</button>
+    </div>
+    <script src="/js/user_page_script.js"></script>
+  </body>
+</html>

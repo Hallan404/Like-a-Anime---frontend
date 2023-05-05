@@ -9,6 +9,7 @@
 }
 body {
   background-color: var(--b5);
+  display: flex;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -85,4 +86,82 @@ input {
   position: absolute;
   right: 10rem;
   bottom: 5rem;
+}
+@media screen and (max-width: 576px) {
+  /* Estilos para dispositivos com largura menor ou igual a 576px */
+  body {
+    font-size: 12px;
+  }
+  .logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 85vh;
+    left: 70vw;
+  }
+  .img-header {
+    width: 5rem;
+  }
+  form {
+    width: 80%;
+    height: 80%;
+    padding: 1rem;
+    border-radius: 2rem;
+  }
+  .form-group {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 80vh;
+    left: 65vw;
+  }
+  .img-header {
+    width: 8rem;
+  }
+  form {
+    width: 80%;
+    height: 80%;
+    padding: 1rem;
+    border-radius: 2rem;
+  }
+  .btn-register {
+    width: 65%;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1025px) {
+  .logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 80vh;
+    left: 70vw;
+  }
+  .img-header {
+    width: 7rem;
+  }
+  form {
+    width: 80%;
+    height: 70%;
+    padding: 1rem;
+    border-radius: 3rem;
+  }
+  .form-group {
+    margin-bottom: 0.5rem;
+  }
+  .btn-register {
+    width: 45%;
+  }
 }

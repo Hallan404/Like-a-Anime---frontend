@@ -85,7 +85,8 @@ const perGenre = (genreId, page) => {
           <h1 class="close-modal">x</h1>
          <h2>${label_anime.textContent}</h2>
       <img src="${img_anime.getAttribute("src")}">
-      <p>${anime_description.textContent}</p>
+      <button class='add-favorite'>Adicionar aos Favoritos</button>
+      <p class="modal-text">${anime_description.textContent}</p>
       <!-- Adicione outras informações do anime aqui -->
     `;
           // Adicionando um evento de clique para fechar o modal quando o usuário clicar no botão de fechar
