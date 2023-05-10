@@ -31,7 +31,11 @@
         alt="Icone da página"
       />
     </div>
-    <form action="user.html" method="get">
+    <form id="register">
+      <div class="form-group">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
       <div class="form-group">
         <label for="username">Nome de Usuário:</label>
         <input type="text" id="username" name="username" required />
@@ -74,5 +78,6 @@
         }
       };
     </script>
+    <script src="/js/api.js"></script>
   </body>
 </html>
