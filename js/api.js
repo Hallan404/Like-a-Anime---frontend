@@ -38,6 +38,9 @@ form?.addEventListener("submit", (event) => {
 // Fazendoo login
 // Variavel de controle de login
 let isLoged = false;
+if (localStorage.getItem("isLoged") === "true") {
+  isLoged = true;
+}
 
 const login_form = document.querySelector("#login-form");
 login_form?.addEventListener("submit", (event) => {
@@ -75,7 +78,9 @@ login_form?.addEventListener("submit", (event) => {
       if (data.message) {
         alert(`Logado com sucesso!\nBem vindo de volta ${username}`);
         isLoged = true;
+        localStorage.setItem("isLoged", true);
         window.location.replace("/index.html");
+        console.log(isLoged);
       } else {
         alert(`${data.error}`);
         login_form.reset();
@@ -83,3 +88,23 @@ login_form?.addEventListener("submit", (event) => {
     })
     .catch((error) => console.error(error));
 });
+// Criando as modificações se o usuario estiver logado
+const btn_entrar = document.querySelector("#btn-entrar");
+const btn_entrar_text = document.querySelector("#btn-entrar-text");
+const header = document.querySelector(".header");
+
+if (isLoged) {
+  btn_entrar_text.textContent = "Conta";
+  btn_entrar.setAttribute("href", "/pages/user.html");
+  const btn_sair = document.createElement("button");
+  btn_sair.classList.add("btn-out");
+  btn_sair.textContent = "Sair";
+  header.appendChild(btn_sair);
+
+  btn_sair.addEventListener("click", () => {
+    localStorage.removeItem("isLoged");
+    window.location.href = "index.html";
+  });
+} else {
+  btn_entrar_text.textContent = "Entrar";
+}

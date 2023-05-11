@@ -47,6 +47,19 @@ body {
   align-items: center;
   color: #fff;
 }
+.btn-out {
+  display: flex;
+  gap: 10px;
+  text-decoration: none;
+  background-color: var(--b5);
+  width: 6rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
 .btn_entry h1 {
   font-size: 1rem;
 }
