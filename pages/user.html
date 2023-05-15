@@ -20,13 +20,24 @@
     <title>Perfil do Usuário</title>
   </head>
   <body>
-    <div class="wrapper">
+    <header class="header">
       <h1 class="title-profile">Perfil do Usuário</h1>
+      <a href="/index.html"> <i class="fas fa-home"></i></a>
+    </header>
+    <div class="wrapper">
       <div class="user-data">
+        <div class="user-data-field">
+          <span class="icon"><i class="fas fa-file-signature"></i></span>
+          <span class="field-label">Nome:</span>
+          <span id="loged-name" class="field-value editable">Usuário</span>
+          <span class="edit-icon" title="Editar"
+            ><i class="fas fa-pencil-alt"></i
+          ></span>
+        </div>
         <div class="user-data-field">
           <span class="icon"><i class="fas fa-user"></i></span>
           <span class="field-label">Nome de Usuário:</span>
-          <span class="field-value editable">Usuário</span>
+          <span id="loged-username" class="field-value editable">Usuário</span>
           <span class="edit-icon" title="Editar"
             ><i class="fas fa-pencil-alt"></i
           ></span>
@@ -34,7 +45,9 @@
         <div class="user-data-field">
           <span class="icon"><i class="fas fa-envelope"></i></span>
           <span class="field-label">E-mail:</span>
-          <span class="field-value editable">usuario@exemplo.com</span>
+          <span id="loged-email" class="field-value editable"
+            >usuario@exemplo.com</span
+          >
           <span class="edit-icon" title="Editar"
             ><i class="fas fa-pencil-alt"></i
           ></span>
@@ -44,10 +57,7 @@
           <div>
             <span class="field-label">Animes Favoritos:</span>
             <span class="field-value expandable">
-              <ul class="anime-list">
-                <li>Fullmetal Alchemist</li>
-                <li>Death Note</li>
-              </ul>
+              <ul id="list-anime" class="anime-list"></ul>
             </span>
           </div>
           <span class="expand-icon" title="Expandir"
@@ -57,7 +67,15 @@
         <div class="user-data-field">
           <span class="icon"><i class="fas fa-lock"></i></span>
           <span class="field-label">Senha:</span>
-          <span class="field-value editable">********</span>
+          <span
+            id="loged-user-password"
+            class="field-value editable"
+            data-type="password"
+            >********</span
+          >
+          <span class="toggle-password" title="Mostrar senha"
+            ><i class="far fa-eye"></i
+          ></span>
           <span class="edit-icon" title="Editar"
             ><i class="fas fa-pencil-alt"></i
           ></span>
@@ -66,6 +84,51 @@
       <button class="save-button" style="display: none">Salvar</button>
     </div>
     <script src="/js/user_page_script.js"></script>
-    <script src="/js/api.js"></script>
+    <script type="module" src="/js/api.js"></script>
+    <script>
+      // Alterações e controle da pagina de usuario
+
+      document.addEventListener("DOMContentLoaded", async function (event) {
+        const nome = document.querySelector("#loged-name");
+        const userApelido = document.querySelector("#loged-username");
+        const userEmail = document.querySelector("#loged-email");
+        const animesFavoritos = document.querySelector("#list-anime");
+        const passwordField = document.querySelector("#loged-user-password");
+        let passwordUnmasked;
+        const get_loged_user_data = (tipoDeAcesso, nomeUsuario) => {
+          fetch(
+            `http://hallandeoliveira.pythonanywhere.com/usuarios/${tipoDeAcesso}/${nomeUsuario}`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              (userApelido.textContent = data.apelido),
+                (userEmail.textContent = data.email),
+                (nome.textContent = data.nome),
+                (passwordUnmasked = data.senha),
+                data.animes_preferidos.map((item) => {
+                  const anime = document.createElement("li");
+                  anime.textContent = item;
+                  animesFavoritos.appendChild(anime);
+                });
+              localStorage.setItem(
+                "passwordUnmasked",
+                JSON.stringify(passwordUnmasked)
+              );
+              localStorage.setItem("loged_user_id", data.id);
+            })
+            .catch((error) => console.error(error));
+        };
+
+        const tipo = localStorage.getItem("tipo");
+        const nomeUser = localStorage.getItem("nome_de_user");
+        get_loged_user_data(tipo, nomeUser);
+      });
+    </script>
   </body>
 </html>

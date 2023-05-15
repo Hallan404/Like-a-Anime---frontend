@@ -41,9 +41,51 @@ expandIcon.addEventListener("click", () => {
   }
 });
 
+// escondendo a senha:
+const togglePassword = document.querySelector(".toggle-password");
+const passwordField = document.querySelector("#loged-user-password");
+const passwordMasked = "*".repeat(passwordField.textContent.length);
+
+let passwordUnmasked = localStorage
+  .getItem("passwordUnmasked")
+  .replace(/"/g, "");
+
+togglePassword.addEventListener("click", () => {
+  if (passwordField.dataset.type === "text") {
+    passwordField.dataset.type = "password";
+    passwordField.textContent = passwordMasked;
+    togglePassword.innerHTML = '<i class="far fa-eye"></i>';
+  } else if (passwordField.dataset.type === "password") {
+    passwordField.dataset.type = "text";
+    passwordField.textContent = passwordUnmasked;
+    togglePassword.innerHTML = '<i class="far fa-eye-slash"></i>';
+  }
+});
 // Adiciona evento de clique no botão salvar
 saveButton.addEventListener("click", () => {
+  const loged_user_id = localStorage.getItem("loged_user_id");
+  const data_user_update = {
+    nome: fields[0].textContent,
+    apelido: fields[1].textContent,
+    email: fields[2].textContent,
+    senha: fields[3].textContent,
+  };
+
+  fetch(
+    `http://hallandeoliveira.pythonanywhere.com/usuarios/atualizar/${loged_user_id}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data_user_update),
+    }
+  )
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error());
   fields.forEach((field, index) => {
+    console.log(field.textContent, index);
     makeNonEditable(field, editIcons[index]);
   });
 });

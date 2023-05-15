@@ -38,10 +38,17 @@ form?.addEventListener("submit", (event) => {
 // Fazendoo login
 // Variavel de controle de login
 let isLoged = false;
+// gravando a variavel no localstorage do navegador
 if (localStorage.getItem("isLoged") === "true") {
   isLoged = true;
 }
 
+// Criando uma função para pegar os dados do usuario logado
+// variavel de controle dos dados do usuario logado
+let loged_user_data = {};
+
+let type = "";
+let nome_de_user = "";
 const login_form = document.querySelector("#login-form");
 login_form?.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -53,14 +60,19 @@ login_form?.addEventListener("submit", (event) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(data);
   };
-
+  // variavel de controle dos dados de login
   let login_data = {};
+  // variavel que estipula o tipo de user name será usado
   if (isEmail(username)) {
+    localStorage.setItem("tipo", "email");
+    localStorage.setItem("nome_de_user", username);
     login_data = {
       email: username,
       senha: password,
     };
   } else {
+    localStorage.setItem("tipo", "nome_usuario");
+    localStorage.setItem("nome_de_user", username);
     login_data = {
       apelido: username,
       senha: password,
@@ -76,11 +88,15 @@ login_form?.addEventListener("submit", (event) => {
     .then((response) => response.json())
     .then((data) => {
       if (data.message) {
+        // Avisando que o login foi bem sucedido
         alert(`Logado com sucesso!\nBem vindo de volta ${username}`);
+        // Alterando a variavel de controle e gravando a nova situação no localstorage
         isLoged = true;
         localStorage.setItem("isLoged", true);
+        // Preenchendo a variavel com os dados do usuario logado
+
+        // redirecionando para a pagina inicial
         window.location.replace("/index.html");
-        console.log(isLoged);
       } else {
         alert(`${data.error}`);
         login_form.reset();
@@ -88,6 +104,7 @@ login_form?.addEventListener("submit", (event) => {
     })
     .catch((error) => console.error(error));
 });
+
 // Criando as modificações se o usuario estiver logado
 const btn_entrar = document.querySelector("#btn-entrar");
 const btn_entrar_text = document.querySelector("#btn-entrar-text");
@@ -100,7 +117,6 @@ if (isLoged) {
   btn_sair.classList.add("btn-out");
   btn_sair.textContent = "Sair";
   header.appendChild(btn_sair);
-
   btn_sair.addEventListener("click", () => {
     localStorage.removeItem("isLoged");
     window.location.href = "index.html";

@@ -85,10 +85,35 @@ const perGenre = (genreId, page) => {
           <h1 class="close-modal">x</h1>
          <h2>${label_anime.textContent}</h2>
       <img src="${img_anime.getAttribute("src")}">
-      <button class='add-favorite'>Adicionar aos Favoritos</button>
+      <button class='add-favorite' >Adicionar aos Favoritos</button>
       <p class="modal-text">${anime_description.textContent}</p>
       <!-- Adicione outras informações do anime aqui -->
     `;
+          const addToFavorite = () => {
+            const loged_user_id = localStorage.getItem("loged_user_id");
+            const categia_do_anime = document.querySelector(".category-title");
+            const anime = {
+              nome: label_anime.textContent,
+              categoria: categia_do_anime.textContent,
+            };
+
+            fetch(
+              `http://hallandeoliveira.pythonanywhere.com/usuarios/atualizar/${loged_user_id}`,
+              {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ animes_preferidos: [anime] }),
+              }
+            )
+              .then((response) => response.json())
+              .then((data) => console.log(data))
+              .catch((error) => console.error());
+          };
+
+          const addFavoriteButton = modalContent.querySelector(".add-favorite");
+          addFavoriteButton.onclick = addToFavorite;
           // Adicionando um evento de clique para fechar o modal quando o usuário clicar no botão de fechar
           const closeModalButton = document.querySelector(".close-modal");
           // Verificando se o botão de fechar foi encontrado
