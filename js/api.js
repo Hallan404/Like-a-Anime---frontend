@@ -15,7 +15,7 @@ form?.addEventListener("submit", (event) => {
     senha: password,
   };
 
-  fetch("http://hallandeoliveira.pythonanywhere.com/usuarios", {
+  fetch("https://hallandeoliveira.pythonanywhere.com/usuarios", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -78,7 +78,7 @@ login_form?.addEventListener("submit", (event) => {
       senha: password,
     };
   }
-  fetch("http://hallandeoliveira.pythonanywhere.com/verificar-login", {
+  fetch("https://hallandeoliveira.pythonanywhere.com/verificar-login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

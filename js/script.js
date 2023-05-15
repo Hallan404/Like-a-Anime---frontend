@@ -98,7 +98,7 @@ const perGenre = (genreId, page) => {
             };
 
             fetch(
-              `http://hallandeoliveira.pythonanywhere.com/usuarios/atualizar/${loged_user_id}`,
+              `https://hallandeoliveira.pythonanywhere.com/usuarios/atualizar/${loged_user_id}`,
               {
                 method: "PUT",
                 headers: {
