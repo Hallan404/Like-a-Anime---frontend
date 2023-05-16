@@ -108,7 +108,9 @@ const perGenre = (genreId, page) => {
               }
             )
               .then((response) => response.json())
-              .then((data) => console.log(data))
+              .then((data) =>
+                alert("Anime inserido com sucesso\n aos seus favoritos!")
+              )
               .catch((error) => console.error());
           };
 
