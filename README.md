@@ -41,6 +41,7 @@ A estrutura do projeto é a seguinte:
 |-- .imgs
 
 index.html
+manifest.json
 ```
 
 - A pasta `.css` contém os arquivos CSS utilizados para estilizar as páginas.
@@ -48,6 +49,7 @@ index.html
 - A pasta `.pages` contém os arquivos HTML das diferentes páginas do sistema.
 - A pasta `.src` contém as imagens utilizadas no projeto.
 - O arquivo `index.html` é a página inicial do sistema.
+- o arquivo manifest.json serve para configurar o portal como uma PWA (Progressive Web Aplication)
 
 ## Acessando o Sistema
 
