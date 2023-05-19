@@ -2,8 +2,8 @@
 
 # Frontend do Sistema de Recomendação de Animes
 
-Este repositório contém o código-fonte do frontend do Sistema de Recomendação de Animes, um projeto desenvolvido
-como parte de um trabalho acadêmico Projeto Integrador IV - Desenvolvimento de Portais. O frontend é responsável por apresentar a interface do usuário e interagir 
+Este repositório contém o código-fonte do frontend do Sistema de escolha de Animes, um projeto desenvolvido
+como parte de um trabalho acadêmico Projeto Integrador IV - Desenvolvimento deSistemas. O frontend é responsável por apresentar a interface do usuário e interagir 
 com a API fornecida pelo backend.
 
 ## Tecnologias Utilizadas
